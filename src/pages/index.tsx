@@ -1,13 +1,8 @@
-import {
-    Button,
-    Flex,
-    FormControl,
-    FormLabel,
-    Input,
-    Stack,
-} from '@chakra-ui/react';
+import { Button, Flex, Stack } from '@chakra-ui/react';
 
-export default function Home() {
+import { Input } from '../components/Form/Input';
+
+const SignIn = () => {
     return (
         <Flex w='100vw' h='100vh' as='main' align='center' justify='center'>
             <Flex
@@ -20,33 +15,8 @@ export default function Home() {
                 flexDir='column'
             >
                 <Stack spacing='4'>
-                    <FormControl>
-                        <FormLabel htmlFor='email'>E-mail</FormLabel>
-                        <Input
-                            id='email'
-                            name='email'
-                            type='email'
-                            variant='filled'
-                            bgColor='gray.900'
-                            focusBorderColor='pink.500'
-                            _hover={{ bgColor: 'gray.900' }}
-                            size='lg'
-                        />
-                    </FormControl>
-
-                    <FormControl>
-                        <FormLabel htmlFor='password'>Senha</FormLabel>
-                        <Input
-                            id='password'
-                            name='password'
-                            type='password'
-                            variant='filled'
-                            bgColor='gray.900'
-                            focusBorderColor='pink.500'
-                            _hover={{ bgColor: 'gray.900' }}
-                            size='lg'
-                        />
-                    </FormControl>
+                    <Input name='email' label='E-mail' type='email' />
+                    <Input name='password' label='Senha' type='password' />
                 </Stack>
                 <Button
                     type='submit'
@@ -59,4 +29,6 @@ export default function Home() {
             </Flex>
         </Flex>
     );
-}
+};
+
+export default SignIn;
